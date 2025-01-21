@@ -1,75 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/weather_model.dart';
 import '../common/themes.dart';
 
 class Weather extends StatelessWidget {
-  const Weather({super.key});
+  WeatherModel weatherModel;
+  Weather({super.key, required this.weatherModel});
 
-  @override
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 5,
-        shadowColor: Colors.blue,
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.blue,
-              Color(0xFFB2EBF2),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue,
+            Color(0xFFB2EBF2),
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Spacer(
-                flex: 2,
-              ),
-              Column(
-                children: [
-                  Text(
-                    'Dammita',
-                    style: cityStyle,
-                  ),
-                  Text(
-                    'update at:01:45',
-                    style: normalStyle,
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Row(
-                // mainAxisSize: MainAxisSize.min,
-
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.network(
-                    'https://dummyimage.com/200x150/cccccc/000000&text=No+Image',
-                    width: MediaQuery.of(context).size.width * 0.22,
-                  ),
-                  Text('17', style: cityStyle),
-                  const Column(
-                    children: [
-                      Text('Max Temp:23'),
-                      Text('Min Temp:10'),
-                    ],
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Text('Light Rain', style: cityStyle),
-              const Spacer(
-                flex: 2,
-              ),
-            ],
-          ),
+      ),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(
+              flex: 2,
+            ),
+            Column(
+              children: [
+                Text(
+                  weatherModel.cityName,
+                  style: cityStyle,
+                ),
+                Text(
+                  weatherModel.date,
+                  style: normalStyle,
+                ),
+              ],
+            ),
+            const Spacer(),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.network(
+                  "https:${weatherModel.weatherStateLogo}" ??
+                      'https://dummyimage.com/200x150/cccccc/000000&text=No+Image',
+                  width: MediaQuery.of(context).size.width * 0.22,
+                ),
+                Text(weatherModel.temp.toString(), style: cityStyle),
+                Column(
+                  children: [
+                    Text(
+                      weatherModel.maxTemp.toString(),
+                    ),
+                    Text(
+                      weatherModel.minTemp.toString(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const Spacer(),
+            Text(weatherModel.weatherState, style: cityStyle),
+            const Spacer(
+              flex: 2,
+            ),
+          ],
         ),
       ),
     );
