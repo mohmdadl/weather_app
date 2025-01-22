@@ -21,6 +21,22 @@ The app is built using **Flutter** and leverages **Cubit** for state management.
 - **Dio**: For handling API requests.
 - **Weather API**: Provides real-time weather data.
 
+## 🖼️ Screenshots
+
+
+### No Weather
+<img src="sceenshots\noWeather.jpg" alt="HomeScreen Section" width="120"/> 
+*Home screen showing categories and audio playback.*
+
+### Serch screen
+<img src="sceenshots\searchScreen.jpg" alt="Colors Section" width="120"/> 
+*Learning numbers with audio support.*
+
+### weather data
+<img src="sceenshots\weatherData.jpg" alt="Colors Section" width="120"/>
+*Learning colors with Japanese pronunciation.*
+
+
 ## Installation 🚀
 
 1. Clone the repository:
