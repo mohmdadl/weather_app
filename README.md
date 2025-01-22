@@ -1,16 +1,28 @@
-# weather_app
+# Weather App 🌦️
 
-A new Flutter project.
+A simple weather application that fetches real-time weather data for any city worldwide.  
+The app is built using **Flutter** and leverages **Cubit** for state management.
 
-## Getting Started
+## Features ✨
 
-This project is a starting point for a Flutter application.
+- Get current weather details including:
+  - Maximum and Minimum Temperature 🌡️
+  - Average Temperature 🌍
+  - Weather Condition (Text & Icon) 🌤️
+  - City Name 🏙️
+  - Date 📅
+- State management using **Cubit** for efficient data handling.
+- Data is fetched from a weather API.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used 🛠️
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: UI development framework.
+- **Cubit**: State management.
+- **Dio**: For handling API requests.
+- **Weather API**: Provides real-time weather data.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation 🚀
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mohmdadl/weather_app.git
