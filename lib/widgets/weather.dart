@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubit/getWeatherCubit/get_weather_cubit.dart';
+import 'package:weather_app/main.dart';
 import 'package:weather_app/models/weather_model.dart';
 import '../common/themes.dart';
+import '../common/get_weather_color.dart';
 
 class Weather extends StatelessWidget {
-  WeatherModel weatherModel;
-  Weather({super.key, required this.weatherModel});
+  Weather({super.key});
 
   @override
   Widget build(BuildContext context) {
+    WeatherModel weatherModel =
+        BlocProvider.of<GetWeatherCubit>(context).weatherModel!;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.blue,
-            Color(0xFFB2EBF2),
-          ],
+            getWeatherColor(weatherModel.weatherState),
+            getWeatherColor(weatherModel.weatherState)[300]!,
+            getWeatherColor(weatherModel.weatherState)[50]!,
+           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),

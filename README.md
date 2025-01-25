@@ -42,3 +42,6 @@ The app is built using **Flutter** and leverages **Cubit** for state management.
 1. Clone the repository:
    ```bash
    git clone https://github.com/mohmdadl/weather_app.git
+
+## Contributing 🤝
+*Feel free to submit pull requests to improve the project.*

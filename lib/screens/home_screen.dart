@@ -13,8 +13,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
         title: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8),
           child: Text(
@@ -43,6 +41,7 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(
                 Icons.search,
                 size: 30,
+                color: Colors.black,
               ),
             ),
           ),
@@ -50,13 +49,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: BlocBuilder<GetWeatherCubit, SuperState>(builder: (context, state) {
         if (state is WeatherLoadedState) {
-          return Weather(weatherModel: state.weatherModel,);
+          return Weather();
         } else if (state is NoWeatherState) {
-          return NoWeather();
+          return const NoWeather();
         } else {
-          return Text('oops,there was an error!');
+          return const Center(child: Text('oops,there was an error!'));
         }
-        ;
       }),
     );
   }

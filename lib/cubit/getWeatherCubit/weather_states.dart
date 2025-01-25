@@ -1,11 +1,6 @@
-import 'package:weather_app/models/weather_model.dart';
-
 class SuperState {}
 
-class WeatherLoadedState extends SuperState {
-  final WeatherModel weatherModel;
-  WeatherLoadedState({required this.weatherModel});
-}
+class WeatherLoadedState extends SuperState {}
 
 class NoWeatherState extends SuperState {}
 
