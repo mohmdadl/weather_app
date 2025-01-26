@@ -14,7 +14,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final FocusNode _focusNode = FocusNode();
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -67,15 +67,15 @@ class _SearchScreenState extends State<SearchScreen> {
               _searchCity();
             },
             decoration: InputDecoration(
-              label: Text('search'),
+              label: const Text('search'),
               hintText: 'Enter City Name',
-              contentPadding: EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.all(20),
               suffixIcon: IconButton(
                 onPressed: _searchCity,
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search),
                 // color: getWeatherColor(weatherCondition)
               ),
-              border: OutlineInputBorder(),
+              border: const OutlineInputBorder(),
             ),
           ),
         ),

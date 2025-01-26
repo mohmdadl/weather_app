@@ -7,7 +7,7 @@ import '../common/themes.dart';
 import '../common/get_weather_color.dart';
 
 class Weather extends StatelessWidget {
-  Weather({super.key});
+  const Weather({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Weather extends StatelessWidget {
                   style: cityStyle,
                 ),
                 Text(
-                  weatherModel.date,
+                  'Updated at ${weatherModel.date.hour}:${weatherModel.date.minute}',
                   style: normalStyle,
                 ),
               ],
