@@ -34,7 +34,8 @@ The app is built using **Flutter** and leverages **Cubit** for state management.
 
 ### weather data
 <img src="sceenshots\weatherData.jpg" alt="Colors Section" width="120"/>
-
+<img src="sceenshots\freazing rain.png" alt="Colors Section" width="120"/>
+<img src="sceenshots\heavy snow -moderate .jpg" alt="Colors Section" width="120"/>
 
 
 ## Installation 🚀
