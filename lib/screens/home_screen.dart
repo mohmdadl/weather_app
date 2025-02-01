@@ -47,15 +47,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: BlocBuilder<GetWeatherCubit, SuperState>(builder: (context, state) {
-        if (state is WeatherLoadedState) {
-          return Weather();
-        } else if (state is NoWeatherState) {
-          return const NoWeather();
-        } else {
-          return const Center(child: Text('oops,there was an error!'));
-        }
-      }),
+      body: BlocBuilder<GetWeatherCubit, SuperState>(
+        builder: (context, state) {
+          if (state is WeatherLoadedState) {
+            return Weather();
+          } else if (state is NoWeatherState) {
+            return const NoWeather();
+          } 
+           else if (state is WeatherLoadingState) {
+            return const Center(child: CircularProgressIndicator());
+          } else {
+            return const Center(child: Text('oops,there was an error!'));
+          }
+        },
+      ),
     );
   }
 }

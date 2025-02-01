@@ -8,14 +8,13 @@ MaterialColor getWeatherColor(String? dayCondition) {
   switch (dayCondition) {
     case 'Sunny':
     case 'Clear':
-    case 'Partly cloudy':
       return Colors.orange;
-
+    case "Partly Cloudy ":
     case 'Mist':
     case 'Fog':
     case 'Freezing fog':
-    case 'Cloudy':
-    case 'Overcast':
+    case 'Cloudy ':
+    case 'Overcast ':
       return Colors.grey;
 
     case 'Patchy rain possible':
@@ -23,26 +22,29 @@ MaterialColor getWeatherColor(String? dayCondition) {
     case 'Light rain':
     case 'Patchy light rain':
     case 'Light rain shower':
+    case "Patchy rain nearby":
       return Colors.lightBlue;
 
     case 'Moderate rain':
-    case 'Heavy rain':
     case 'Torrential rain shower':
     case 'Moderate or heavy rain shower':
     case 'Patchy freezing drizzle possible':
     case 'Freezing drizzle':
     case 'Heavy freezing drizzle':
+    case "Light freezing rain":
       return Colors.blue;
 
     case 'Patchy snow possible':
-    case 'Light snow':
+  
     case 'Patchy light snow':
     case 'Light snow showers':
       return Colors.cyan;
 
     case 'Moderate snow':
+      case 'Light snow':
     case 'Heavy snow':
     case 'Blizzard':
+    case 'Heavy rain':
     case 'Moderate or heavy snow showers':
       return Colors.indigo;
 
@@ -62,6 +64,6 @@ MaterialColor getWeatherColor(String? dayCondition) {
       return Colors.purple;
 
     default:
-      return Colors.blue; // Default color for unknown conditions
+      return Colors.teal; // Default color for unknown conditions
   }
 }
